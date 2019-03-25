@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FTK
-   &#160;<span id="projectnumber">0.0.0</span>
+   &#160;<span id="projectnumber">0.0.1</span>
    </div>
    <div id="projectbrief">FTK: The Feature Tracking Kit</div>
   </td>
@@ -68,27 +68,48 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>FTK is a library that provides building blocks for feature tracking algorithms in scientific datasets. FTK is header-only and written in C++17.</p>
-<p>FTK is still in its early alpha stage, thus examples, documents, and tests are still in progress.</p>
 <h2>Major components in FTK</h2>
 <ul>
 <li>Hypermesh: data structures for high-dimensional meshes and mesh elements including <em>n</em>-simplices, <em>n</em>-cubes, and <em>n</em>-prisms; utilities to generalize given 2D/3D structured/unstructured meshes into 3D/4D spacetime meshes</li>
+</ul>
+<object type="image/svg+xml" data="./docs/images/regular_simplex_subdivision.svg"></object>
+/>
+<ul>
 <li>Numeric: root-find algorithms for inverse interpolations and parallel vector operators in <em>n</em>-simplices, <em>n</em>-cubes, and simplex-prisms; lightweight linear algebra utilities to support root-finding</li>
 <li>CCL: connected component labeling algorithm for building feature tracking algorithms</li>
 <li>Geometry: utilities to transform connect components to geometry for visualization and analysis</li>
 <li>Tracking graph: data structures to record births, deaths, merges, and splits of features; visualization algorithms for tracking graphs</li>
 <li>IO: interfaces to stage multiple timesteps of the inputs and to store outputs in key-value stores (LevelDB, RocksDB, and Mochi), file systems, and in situ staging areas</li>
 </ul>
-<h2>Download, build, and install</h2>
+<h2>Download and Install</h2>
 <p>You may include FTK headers and call FTK functions directly from your C++ code, because FTK is header-only.</p>
 <h3>Checkout FTK source from Git</h3>
 <div class="fragment"><div class="line">$ git clone https://github.com/hguo/ftk $FTK_SOURCE_DIR</div></div><!-- fragment --><h3>Installation (optional)</h3>
-<p>You may install FTK to an designated path. The installation will also generate FTKConfig.cmake in the installation path, such that you can use find_package(FTK) to find and use FTK in your CMakeLists.txt</p>
+<p>You may install FTK to an designated path. The installation will also generate FTKConfig.cmake in the installation path, such that you can use <code>find_package(FTK)</code> to find and use FTK in your CMakeLists.txt</p>
 <div class="fragment"><div class="line">$ git clone https://github.com/hguo/ftk $FTK_SOURCE_DIR</div><div class="line">$ mkdir $FTK_SOURCE_DIR/build &amp;&amp; cd $FTK_SOURCE_DIR/build</div><div class="line">$ cmake .. -DCMAKE_INSTALL_PREFIX=$FTK_INSTALL_DIR</div><div class="line">$ make install</div></div><!-- fragment --><p>The installed files are organized as follows:</p>
-<div class="fragment"><div class="line">$ tree $FTK_INSTALL_DIR</div><div class="line">.</div><div class="line">├── include</div><div class="line">│   ├── ftk</div><div class="line">│   │   ├── algorithms</div><div class="line">│   │   │   ├── bfs.h</div><div class="line">...</div><div class="line">│   └── hypermesh</div><div class="line">│       ├── ndarray.hh</div><div class="line">│       ├── regular_mesh.hh</div><div class="line">...</div><div class="line">└── lib</div><div class="line">    └── cmake</div><div class="line">        └── FTKConfig.cmake</div></div><!-- fragment --><h3>Build FTK examples</h3>
-<div class="fragment"><div class="line">$ cd $FTK_SOURCE_DIR/build</div><div class="line">$ cmake .. -DFTK_BUILD_EXAMPLES=1</div><div class="line">$ make</div></div><!-- fragment --><h3>Include FTK in your CMake project</h3>
+<div class="fragment"><div class="line">$ tree $FTK_INSTALL_DIR</div><div class="line">.</div><div class="line">├── include</div><div class="line">│   ├── ftk</div><div class="line">│   │   ├── algorithms</div><div class="line">│   │   │   ├── bfs.hh</div><div class="line">...</div><div class="line">│   └── hypermesh</div><div class="line">│       ├── ndarray.hh</div><div class="line">│       ├── regular_mesh.hh</div><div class="line">...</div><div class="line">└── lib</div><div class="line">    └── cmake</div><div class="line">        └── FTKConfig.cmake</div></div><!-- fragment --><h3>Include FTK in your CMake project</h3>
 <p>You may use the FTK installation in your own CMakeLists.txt file:</p>
 <div class="fragment"><div class="line">find_package(FTK REQUIRED)</div><div class="line">include_directories (${FTK_INCLUDE_DIR})</div></div><!-- fragment --><p>When you configure your build, please specify FTK_DIR with CMake:</p>
-<div class="fragment"><div class="line">$ cmake -DFTK_DIR=$FTK_INSTALL_DIR/lib/cmake</div></div><!-- fragment --><h2>Applications that use FTK</h2>
+<div class="fragment"><div class="line">$ cmake -DFTK_DIR=$FTK_INSTALL_DIR/lib/cmake</div></div><!-- fragment --><h2>Build Examples</h2>
+<p>FTK currently provides three examples, including 2D critical point tracking, 3D critical point tracking, and a demo for the tracking graph.</p>
+<h3>Dependencies</h3>
+<p>FTK examples depend on the following packages</p>
+<ul>
+<li>VTK &gt;= 8.2, optional, or required if you would like to visualize trajectories with VTK</li>
+<li>Qt5 &gt;= 5.11.2, optional, or required if you would like to visualize trajectories with Qt/OpenGL windows</li>
+<li>NetCDF &gt;= 4.6.1, optional, or requried if you would like to load a 3D scalar</li>
+</ul>
+<h3>Build FTK examples</h3>
+<div class="fragment"><div class="line">$ cd $FTK_SOURCE_DIR/build</div><div class="line">$ cmake .. -DFTK_BUILD_EXAMPLES=1</div><div class="line">$ make</div></div><!-- fragment --><h3>Run FTK examples</h3>
+<p>The followings are the guid to run the 2D critical point tracking example. We aim to track local maximum over time for the following scalar field:</p>
+<p>$f(x,y,t)=cos(x\cos t - y\sin t) \sin(x\sin t + y\cos t),$</p>
+<p>where $x$ and $y$ are 2D coordinates and $t$ is time. We discretize the $x,y$ domain into a $128\times 128$ regular grid and the time domain into 10 timesteps.</p>
+<p>In this example, local maximum are defined as the loci of points that $(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial x})=0$ and both eigenvalues of the Hessian of $f$ (in terms of $x$ and $y$) are negative. We use a sweep-and-trace algorithm to first localize local maximum and trace the maximum over space-time. We first mesh the scalar field with a 3D regular simplex mesh and check every 2-elements (faces) meets the criteria. We then do the connected component labeling; two faces are connected if each of them has a local maxima and share the same 3-element (tetrahedra). The trajectories are then constructured from the connected components.</p>
+<p>You can run the example with following command, and the executable prints the trajectory:</p>
+<div class="fragment"><div class="line">$ ./examples/critical_point_tracking_2d/ex_critical_point_tracking_2d</div><div class="line">We found 16 trajectories:</div><div class="line">--Curve 0:</div><div class="line">---x=(2.000000, 26.972244), t=5.869000, val=0.955384</div><div class="line">---x=(2.056124, 26.857716), t=5.857716, val=0.958166</div><div class="line">...</div><div class="line">--Curve 15:</div><div class="line">---x=(125.000000, 122.414673), t=1.241837, val=0.884089</div><div class="line">---x=(124.709686, 122.709686), t=1.187109, val=0.912740</div><div class="line">...</div></div><!-- fragment --><p>If you built the example with Qt, you can use the Qt/OpenGL based window to explore the trajectory. You can rotate the space with mouse and increase/decrease timesteps with the left/right keys. The color encodes the ID of different trajectories. Please use <code>—qt</code> argument to run the executable, and the example screenshot is as follows.</p>
+<div class="fragment"><div class="line">$ ./examples/critical_point_tracking_2d/ex_critical_point_tracking_2d --qt</div></div><!-- fragment --><img src="./docs/images/critical_point_tracking_2d.png" alt="" class="inline"/>
+<p>If you built the example with VTK, you may also explore the trajectories with a VTK window by adding <code>—vtk</code> argument:</p>
+<div class="fragment"><div class="line">$ ./examples/critical_point_tracking_2d/ex_critical_point_tracking_2d --vtk</div></div><!-- fragment --><h2>Applications that use FTK</h2>
 <ul>
 <li><a href="https://github.com/hguo/vortexfinder2">vortexfinder2</a>: Vortex finder for time-dependent Ginzburg-Landau superconductor simulation data </li>
 </ul>
@@ -96,7 +117,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2019 11:37:28 for FTK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 25 2019 11:01:41 for FTK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

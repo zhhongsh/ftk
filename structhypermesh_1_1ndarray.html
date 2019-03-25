@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FTK
-   &#160;<span id="projectnumber">0.0.0</span>
+   &#160;<span id="projectnumber">0.0.1</span>
    </div>
    <div id="projectbrief">FTK: The Feature Tracking Kit</div>
   </td>
@@ -69,6 +69,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structhypermesh_1_1ndarray-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">hypermesh::ndarray&lt; T &gt; Struct Template Reference</div>  </div>
@@ -104,6 +105,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (const st
 <tr class="memitem:a97fe6c39abce67a4c3948c6b8dcead0f"><td class="memItemLeft" align="right" valign="top"><a id="a97fe6c39abce67a4c3948c6b8dcead0f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (const std::vector&lt; size_t &gt; &amp;dims, T val)</td></tr>
 <tr class="separator:a97fe6c39abce67a4c3948c6b8dcead0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66fd35a023c6190e29a8c9e595ffb206"><td class="memItemLeft" align="right" valign="top"><a id="a66fd35a023c6190e29a8c9e595ffb206"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (size_t n0)</td></tr>
+<tr class="separator:a66fd35a023c6190e29a8c9e595ffb206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48fdd4ac4913b10bfcb24851ab229a7d"><td class="memItemLeft" align="right" valign="top"><a id="a48fdd4ac4913b10bfcb24851ab229a7d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (size_t n0, size_t n1)</td></tr>
+<tr class="separator:a48fdd4ac4913b10bfcb24851ab229a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb069f0ff4ab39c59dbfecf1c360b0a"><td class="memItemLeft" align="right" valign="top"><a id="a3eb069f0ff4ab39c59dbfecf1c360b0a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (size_t n0, size_t n1, size_t n2)</td></tr>
+<tr class="separator:a3eb069f0ff4ab39c59dbfecf1c360b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa51bd99d0a25fc3220f51e913b187015"><td class="memItemLeft" align="right" valign="top"><a id="aa51bd99d0a25fc3220f51e913b187015"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (size_t n0, size_t n1, size_t n2, size_t n3)</td></tr>
+<tr class="separator:aa51bd99d0a25fc3220f51e913b187015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf88a4cb931ef7496cd2933d98e7d15b"><td class="memItemLeft" align="right" valign="top"><a id="acf88a4cb931ef7496cd2933d98e7d15b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (size_t n0, size_t n1, size_t n2, size_t n3, size_t n4)</td></tr>
+<tr class="separator:acf88a4cb931ef7496cd2933d98e7d15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d69aa53219283c23dcff735c0e82a6"><td class="memItemLeft" align="right" valign="top"><a id="ae7d69aa53219283c23dcff735c0e82a6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (size_t n0, size_t n1, size_t n2, size_t n3, size_t n4, size_t n5)</td></tr>
+<tr class="separator:ae7d69aa53219283c23dcff735c0e82a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24422c42846e7e6342fce92740a8cd86"><td class="memItemLeft" align="right" valign="top"><a id="a24422c42846e7e6342fce92740a8cd86"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reshape</b> (size_t n0, size_t n1, size_t n2, size_t n3, size_t n4, size_t n5, size_t n6)</td></tr>
+<tr class="separator:a24422c42846e7e6342fce92740a8cd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64276e9f7fb0c8dece595d56ed346704"><td class="memItemLeft" align="right" valign="top"><a id="a64276e9f7fb0c8dece595d56ed346704"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>index</b> (const std::vector&lt; size_t &gt; &amp;idx) const</td></tr>
 <tr class="separator:a64276e9f7fb0c8dece595d56ed346704"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,6 +231,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>from_binary_file</b> 
 <tr class="memitem:a53853405db2d139cfa8ed14df6fe9e15"><td class="memItemLeft" align="right" valign="top"><a id="a53853405db2d139cfa8ed14df6fe9e15"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>from_binary_file</b> (FILE *fp)</td></tr>
 <tr class="separator:a53853405db2d139cfa8ed14df6fe9e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f057e5992641b61496c6eaea3e50b2"><td class="memItemLeft" align="right" valign="top"><a id="a32f057e5992641b61496c6eaea3e50b2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>from_binary_file_sequence</b> (const std::string &amp;pattern)</td></tr>
+<tr class="separator:a32f057e5992641b61496c6eaea3e50b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd0ac685ffe398c2470131a054ca677"><td class="memItemLeft" align="right" valign="top"><a id="afbd0ac685ffe398c2470131a054ca677"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>to_binary_file</b> (const std::string &amp;filename)</td></tr>
 <tr class="separator:afbd0ac685ffe398c2470131a054ca677"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,6 +258,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>to_netcdf</b> (int nc
 <tr class="memitem:a3fc6267f2a3c0f2ab1637c3fb864530a"><td class="memItemLeft" align="right" valign="top"><a id="a3fc6267f2a3c0f2ab1637c3fb864530a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>to_netcdf</b> (int ncid, int varid)</td></tr>
 <tr class="separator:a3fc6267f2a3c0f2ab1637c3fb864530a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c14381898394dceb7e45c5470b4a2cf"><td class="memItemLeft" align="right" valign="top"><a id="a6c14381898394dceb7e45c5470b4a2cf"></a>
+std::tuple&lt; T, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>min_max</b> () const</td></tr>
+<tr class="separator:a6c14381898394dceb7e45c5470b4a2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a47e674085b592ffae94f2971ff726c19"><td class="memItemLeft" align="right" valign="top"><a id="a47e674085b592ffae94f2971ff726c19"></a>
+static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>glob</b> (const std::string &amp;pattern)</td></tr>
+<tr class="separator:a47e674085b592ffae94f2971ff726c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/hypermesh/<a class="el" href="ndarray_8hh_source.html">ndarray.hh</a></li>
@@ -240,7 +274,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>to_netcdf</b> (int nc
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2019 11:37:28 for FTK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 25 2019 11:01:41 for FTK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
