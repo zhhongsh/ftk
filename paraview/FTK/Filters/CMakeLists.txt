@@ -1,6 +1,6 @@
 set(classes
   vtkCriticalPoint2DTracker
-  vtkSpiralWoven2DStackSource
+  vtkSpiralWoven2DScalarFieldSource
   vtkABCFlow3DVectorFieldSource
   vtkDoubleGyreVectorField2DSource
 )
@@ -12,7 +12,7 @@ vtk_module_link(FTKFilters
 
 paraview_add_server_manager_xmls(XMLS 
   CriticalPoint2DTracker.xml
-  SpiralWoven2DStackSource.xml
+  SpiralWoven2DScalarFieldSource.xml
   ABCFlow3DVectorFieldSource.xml
   DoubleGyreVectorField2DSource.xml
 )
